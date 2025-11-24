@@ -1,54 +1,23 @@
 [
   {
-    "id": "youtube_premium",
-    "name": "يوتيوب بريميوم",
-    "subtitle": "آخر اصدار من يوتيوب بريميوم مطور بدون اعلانات",
-    "downloads": 106,
-    "version": "V10.89.99",
-    "platform": "iOS",
-    "popular": true,
-    "isNew": true,
-    "description": "آخر اصدار من يوتيوب بريميوم مطور بدون اعلانات.",
-    "icon": "https://i.imgur.com/9T8x3Vv.png",
-    "downloadUrl": "رابط_الـIPA_من_قناتك"
+    "name": "iMoayad Store",
+    "version": "V 1.0",
+    "tag": "تطبيق المتجر",
+    "icon": "https://imoayad.site/upload/iMoayadlogos.png",
+    "downloadUrl": "#"
   },
   {
-    "id": "twitter_x",
-    "name": "تويتر",
-    "subtitle": "تويتر سابقاً مع أداة متطورة",
-    "downloads": 37,
-    "version": "V1.0",
-    "platform": "iOS",
-    "popular": true,
-    "isNew": true,
-    "description": "نسخة تويتر X مع بعض المزايا الإضافية.",
-    "icon": "https://i.imgur.com/odfVb8p.png",
-    "downloadUrl": "رابط_الـIPA"
+    "name": "Whatsapp",
+    "version": "V 2.21.200",
+    "tag": "Watusi",
+    "icon": "https://imoayad.site/groups/pro1/app2/Whatsappcon.jpeg",
+    "downloadUrl": "#"
   },
   {
-    "id": "snapchat_plus",
-    "name": "سناب شات",
-    "subtitle": "سناب شات بلس يتطلب وجود كود لتسجيل الدخول",
-    "downloads": 54,
-    "version": "V1.0",
-    "platform": "iOS",
-    "popular": false,
-    "isNew": true,
-    "description": "نسخة مطورة من سناب شات مع مزايا إضافية.",
-    "icon": "https://i.imgur.com/FzY1KkM.png",
-    "downloadUrl": "رابط_الـIPA"
-  },
-  {
-    "id": "unblur_photo",
-    "name": "UnBlur Photo",
-    "subtitle": "Premium features activated ✅ - To modify",
-    "downloads": 20,
-    "version": "V1.0",
-    "platform": "iOS",
-    "popular": false,
-    "isNew": true,
-    "description": "تطبيق لتحسين الصور وتشغيل خصائص بريميوم.",
-    "icon": "https://i.imgur.com/2jr7P8B.png",
-    "downloadUrl": "رابط_الـIPA"
+    "name": "YouTube",
+    "version": "V 17.08.2",
+    "tag": "Cercube",
+    "icon": "https://imoayad.site/upload/Youtubecon.jpg",
+    "downloadUrl": "#"
   }
 ]

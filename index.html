@@ -1,88 +1,128 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iMoayad Store</title>
+
+  <!-- خط تاجوال -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- سكربت الكتابة المتحركة (نفس اللي في الكود الأصلي لكن نظيف) -->
+  <script>
+    var TxtType = function (el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function () {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function () {
+      // تفعيل الكتابة المتحركة
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+
+      // بعد ما تجهز الصفحة، حمّل التطبيقات
+      loadApps();
+    };
+  </script>
+
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="page">
-
-    <!-- هيدر Store App -->
-    <header class="top-header">
-      <div class="top-header-right">
-        <span class="top-title">
-          Store <span class="top-title-accent">App</span>
-        </span>
-        <div class="stack-icon">
-          <span></span><span></span><span></span>
-        </div>
+  <!-- نافبار بسيطة -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-main">iMoayad</span>
+        <span class="brand-sub">Store</span>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <!-- خط فاصل تحت الهيدر مثل الصورة -->
-    <div class="divider"></div>
-
-    <!-- مربع البحث -->
-    <div class="search-wrapper">
-      <input id="searchInput" type="text" placeholder="...إبحث عن تطبيق" />
-      <span class="search-icon">🔍</span>
+  <div class="page-body">
+    <!-- اللوجو -->
+    <div class="logo-wrapper">
+      <img src="https://imoayad.site/upload/iMoayadlogos.png" alt="logo" class="logo-img">
     </div>
 
-    <!-- الأكثر تحميلاً -->
-    <section class="section">
-      <div class="section-title">
-        <h2>الأكثر تحميلاً</h2>
-        <span>🔥</span>
-      </div>
-      <div id="popularApps" class="popular-list"></div>
-    </section>
-
-    <!-- كل التطبيقات -->
-    <section class="section">
-      <div class="section-title">
-        <h2>كل التطبيقات</h2>
-        <span>📚</span>
-      </div>
-      <div id="allApps" class="apps-list"></div>
-    </section>
-
-  </div>
-
-  <!-- شيت التفاصيل اللي يطلع من تحت (مثل الصورة الثانية) -->
-  <div id="detailsSheet" class="details-sheet">
-    <div class="details-content">
-
-      <div class="details-top">
-        <div class="details-text">
-          <h3 id="detailsName"></h3>
-          <p class="details-meta">
-            <span id="detailsVersion"></span>
-            <span class="dot">•</span>
-            <span id="detailsPlatform"></span>
-          </p>
-          <p class="details-downloads">
-            تحميل <span id="detailsDownloads"></span>
-            <span class="downloads-icon">📩</span>
-          </p>
-        </div>
-        <div class="details-icon-wrapper">
-          <img id="detailsIcon" alt="">
-        </div>
-      </div>
-
-      <div class="details-desc-box">
-        <p id="detailsDescription"></p>
-      </div>
-
-      <a id="detailsLink" href="#" target="_blank" class="details-btn">
-        تحميل الآن ⬇️
+    <!-- النص المتحرك -->
+    <h5 class="type-line">
+      <a href="#" class="typewrite" data-period="1500" data-type='["", "iMoayad Store .."]'>
+        <span class="wrap"></span>
       </a>
+    </h5>
+
+    <!-- وصف بسيط -->
+    <h6 class="subtitle">
+      جميع التطبيقات تم تعديلها بواسطة المطوّر
+    </h6>
+
+    <!-- عدد التطبيقات -->
+    <p class="apps-count">
+      عدد التطبيقات : <span id="appsCount">0</span>
+    </p>
+
+    <!-- شبكة الكروت -->
+    <div class="cards-container" id="appsContainer">
+      <!-- يتم تعبئتها من app.js -->
     </div>
+
+    <div style="height: 120px;"></div>
   </div>
 
-  <script src="app.js"></script>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© iMoayad Store</p>
+    </div>
+  </footer>
 </body>
 </html>
