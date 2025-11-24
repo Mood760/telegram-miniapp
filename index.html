@@ -3,30 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بوت التطبيقات</title>
+  <title>Store App</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
   <div class="page">
 
-    <!-- الهيدر (العنوان فوق) -->
-    <header class="header">
-      <div class="header-title">
-        <span class="header-sub">mini app</span>
-        <h1>بوت التطبيقات</h1>
-      </div>
-      <div class="header-right">
-        <span class="store-text">Store <span class="store-accent">App</span></span>
+    <!-- هيدر Store App -->
+    <header class="top-header">
+      <div class="top-header-right">
+        <span class="top-title">
+          Store <span class="top-title-accent">App</span>
+        </span>
         <div class="stack-icon">
           <span></span><span></span><span></span>
         </div>
       </div>
     </header>
 
+    <!-- خط فاصل تحت الهيدر مثل الصورة -->
+    <div class="divider"></div>
+
     <!-- مربع البحث -->
     <div class="search-wrapper">
-      <input id="searchInput" type="text" placeholder="إبحث عن تطبيق..." />
+      <input id="searchInput" type="text" placeholder="...إبحث عن تطبيق" />
       <span class="search-icon">🔍</span>
     </div>
 
@@ -50,11 +51,12 @@
 
   </div>
 
-  <!-- شيت التفاصيل (اللي تحت مثل الصورة الثانية) -->
+  <!-- شيت التفاصيل اللي يطلع من تحت (مثل الصورة الثانية) -->
   <div id="detailsSheet" class="details-sheet">
     <div class="details-content">
+
       <div class="details-top">
-        <div>
+        <div class="details-text">
           <h3 id="detailsName"></h3>
           <p class="details-meta">
             <span id="detailsVersion"></span>
@@ -62,7 +64,7 @@
             <span id="detailsPlatform"></span>
           </p>
           <p class="details-downloads">
-            <span id="detailsDownloads"></span> تحميل
+            تحميل <span id="detailsDownloads"></span>
             <span class="downloads-icon">📩</span>
           </p>
         </div>

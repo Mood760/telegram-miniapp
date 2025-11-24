@@ -1,3 +1,4 @@
+// تشغيل الميني أب بشكل كامل داخل تليجرام
 const tg = window.Telegram?.WebApp;
 if (tg) {
   tg.expand();
@@ -5,7 +6,7 @@ if (tg) {
 
 let allAppsData = [];
 
-// تحميل البيانات
+// تحميل البيانات من apps.json
 fetch("apps.json")
   .then(res => res.json())
   .then(data => {
@@ -15,6 +16,7 @@ fetch("apps.json")
   .catch(err => console.error("Error loading apps.json", err));
 
 /* ====== رسم القوائم ====== */
+
 function renderLists(data) {
   const popularContainer = document.getElementById("popularApps");
   const allContainer = document.getElementById("allApps");
@@ -22,7 +24,7 @@ function renderLists(data) {
   popularContainer.innerHTML = "";
   allContainer.innerHTML = "";
 
-  // الأكثر تحميلاً
+  // قسم الأكثر تحميلاً (أفقياً)
   data.filter(app => app.popular).forEach(app => {
     const card = document.createElement("div");
     card.className = "popular-card";
@@ -33,15 +35,20 @@ function renderLists(data) {
         <div class="popular-name">${app.name}</div>
         <div class="popular-downloads">${app.downloads} تحميل</div>
       </div>
-      <div class="popular-icon">
-        ${app.icon ? `<img src="${app.icon}" alt="${app.name}">` : "📱"}
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="popular-main-icon">
+          <span>⬇️</span>
+        </div>
+        <div class="popular-icon">
+          ${app.icon ? `<img src="${app.icon}" alt="${app.name}">` : "📱"}
+        </div>
       </div>
     `;
 
     popularContainer.appendChild(card);
   });
 
-  // كل التطبيقات
+  // قسم كل التطبيقات (عمودي)
   data.forEach(app => {
     const card = document.createElement("div");
     card.className = "app-card";
@@ -66,6 +73,7 @@ function renderLists(data) {
 }
 
 /* ====== شيت التفاصيل ====== */
+
 const detailsSheet = document.getElementById("detailsSheet");
 const detailsName = document.getElementById("detailsName");
 const detailsVersion = document.getElementById("detailsVersion");
@@ -81,17 +89,19 @@ function openDetails(app) {
   detailsPlatform.textContent = app.platform || "iOS";
   detailsDownloads.textContent = app.downloads || 0;
   detailsDescription.textContent = app.description || app.subtitle || "";
+
   if (app.icon) {
     detailsIcon.src = app.icon;
   } else {
     detailsIcon.removeAttribute("src");
   }
+
   detailsLink.href = app.downloadUrl || "#";
 
   detailsSheet.classList.add("open");
 }
 
-// إغلاق الشيت بالسحب من الخلفية (لمسة خارجية لو حاب تضيف لاحقاً)
+// إغلاق الشيت عند الضغط على الخلفية خارج الكارد
 detailsSheet.addEventListener("click", (e) => {
   if (e.target === detailsSheet) {
     detailsSheet.classList.remove("open");
@@ -99,6 +109,7 @@ detailsSheet.addEventListener("click", (e) => {
 });
 
 /* ====== البحث ====== */
+
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", () => {

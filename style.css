@@ -11,52 +11,39 @@ body {
 }
 
 .page {
-  padding: 16px;
-  padding-bottom: 80px;
+  padding: 10px 16px 80px;
 }
 
-/* ====== الهيدر ====== */
-.header {
+/* ====== الهيدر Store App ====== */
+
+.top-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 18px;
-  margin-top: 8px;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
-.header-title h1 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.header-sub {
-  font-size: 11px;
-  color: #a0a0a0;
-  display: block;
-  margin-bottom: 2px;
-}
-
-.header-right {
+.top-header-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.store-text {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.store-accent {
-  color: #a48bff;
+.top-title {
+  font-size: 22px;
   font-weight: 700;
 }
 
+.top-title-accent {
+  color: #7d5cff;
+}
+
 .stack-icon {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 999px;
-  border: 1px solid #ffffff80;
+  border: 1px solid #ffffff99;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +58,14 @@ body {
   background: #ffffff;
 }
 
+/* خط فاصل تحت الهيدر */
+.divider {
+  border-top: 1px solid #2d2d2f;
+  margin: 6px -16px 14px;
+}
+
 /* ====== مربع البحث ====== */
+
 .search-wrapper {
   position: relative;
   margin-bottom: 20px;
@@ -79,28 +73,29 @@ body {
 
 .search-wrapper input {
   width: 100%;
-  background: #181820;
-  border-radius: 14px;
-  border: none;
-  padding: 12px 40px 12px 14px;
+  background: #1f1f23;
+  border-radius: 24px;
+  border: 1px solid #2b2b2f;
+  padding: 13px 44px 13px 16px;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 15px;
   outline: none;
 }
 
 .search-wrapper input::placeholder {
-  color: #6e6f7b;
+  color: #8c8d96;
 }
 
 .search-icon {
   position: absolute;
-  right: 12px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 18px;
 }
 
-/* ====== العناوين ====== */
+/* ====== العناوين (الأكثر تحميلاً / كل التطبيقات) ====== */
+
 .section {
   margin-bottom: 22px;
 }
@@ -113,49 +108,65 @@ body {
 }
 
 .section-title h2 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 }
 
-/* ====== قائمة الأكثر تحميلاً (横) ====== */
+/* ====== قائمة الأكثر تحميلاً (أفقية) ====== */
+
 .popular-list {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .popular-card {
-  min-width: 160px;
-  background: radial-gradient(circle at top left, #6f4dff, #1a1824);
-  border-radius: 18px;
-  padding: 14px;
+  min-width: 190px;
+  background: #1b1b22;
+  border-radius: 26px;
+  padding: 14px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.85);
 }
 
 .popular-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .popular-name {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .popular-downloads {
-  font-size: 11px;
-  color: #d5d5ff;
+  font-size: 12px;
+  color: #cfd0ff;
+}
+
+.popular-main-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top, #8165ff, #5a3dff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.9);
+}
+
+.popular-main-icon span {
+  font-size: 20px;
 }
 
 .popular-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -164,12 +175,13 @@ body {
 }
 
 .popular-icon img {
-  width: 75%;
-  height: 75%;
+  width: 78%;
+  height: 78%;
   object-fit: contain;
 }
 
 /* ====== قائمة كل التطبيقات (عمودية) ====== */
+
 .apps-list {
   display: flex;
   flex-direction: column;
@@ -177,13 +189,13 @@ body {
 }
 
 .app-card {
-  background: #101018;
-  border-radius: 18px;
-  padding: 12px 14px;
+  background: #111118;
+  border-radius: 26px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.9);
 }
 
 .app-left {
@@ -193,49 +205,48 @@ body {
 }
 
 .app-arrow {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 999px;
   background: #181820;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  color: #bbbbc8;
+  font-size: 14px;
+  color: #b1b2be;
 }
 
 .app-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .badge-new {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #1c3f1c;
-  color: #7fd87f;
+  background: #163e19;
+  color: #82df82;
   font-size: 11px;
   border-radius: 999px;
-  padding: 2px 10px;
-  margin-bottom: 2px;
+  padding: 2px 11px;
 }
 
 .app-name {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .app-sub {
-  font-size: 11px;
-  color: #8c8d97;
+  font-size: 12px;
+  color: #999aab;
 }
 
 .app-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -249,14 +260,15 @@ body {
   object-fit: contain;
 }
 
-/* ====== شيت التفاصيل ====== */
+/* ====== شيت التفاصيل (الشاشة الثانية) ====== */
+
 .details-sheet {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   transform: translateY(100%);
-  transition: transform 0.28s ease-out;
+  transition: transform 0.3s ease-out;
   pointer-events: none;
 }
 
@@ -266,12 +278,96 @@ body {
 }
 
 .details-content {
-  background: #050509;
-  border-radius: 26px 26px 0 0;
-  padding: 18px 18px 24px;
-  box-shadow: 0 -12px 30px rgba(0,0,0,0.85);
+  background: #09090f;
+  border-radius: 30px 30px 0 0;
+  padding: 20px 18px 26px;
+  box-shadow: 0 -16px 32px rgba(0,0,0,0.9);
 }
 
 .details-top {
   display: flex;
-  justify-content: space-betwe
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.details-text h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.details-meta {
+  font-size: 13px;
+  color: #b4b5c6;
+  margin-bottom: 4px;
+}
+
+.details-meta .dot {
+  margin: 0 4px;
+}
+
+.details-downloads {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.downloads-icon {
+  margin-right: 4px;
+}
+
+.details-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.details-icon-wrapper img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.details-desc-box {
+  background: #181820;
+  border-radius: 18px;
+  padding: 11px 14px;
+  margin-bottom: 18px;
+}
+
+.details-desc-box p {
+  font-size: 13px;
+  color: #d4d4df;
+}
+
+/* زر تحميل الآن */
+.details-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 13px 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #7d5cff, #9f74ff);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.9);
+}
+
+/* تفاعل الضغط على الكروت */
+.app-card,
+.popular-card {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s ease-out;
+}
+
+.app-card:active,
+.popular-card:active {
+  transform: scale(0.97);
+}

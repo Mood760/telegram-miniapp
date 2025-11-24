@@ -2,27 +2,53 @@
   {
     "id": "youtube_premium",
     "name": "يوتيوب بريميوم",
-    "subtitle": "آخر إصدار من يوتيوب بريميوم مطوّر بدون إعلانات",
+    "subtitle": "آخر اصدار من يوتيوب بريميوم مطور بدون اعلانات",
     "downloads": 106,
     "version": "V10.89.99",
     "platform": "iOS",
     "popular": true,
     "isNew": true,
-    "description": "آخر إصدار من يوتيوب بريميوم مطوّر بدون إعلانات.",
+    "description": "آخر اصدار من يوتيوب بريميوم مطور بدون اعلانات.",
     "icon": "https://i.imgur.com/9T8x3Vv.png",
-    "downloadUrl": "ضع_هنا_رابط_الـIPA_من_القناة"
+    "downloadUrl": "رابط_الـIPA_من_قناتك"
+  },
+  {
+    "id": "twitter_x",
+    "name": "تويتر",
+    "subtitle": "تويتر سابقاً مع أداة متطورة",
+    "downloads": 37,
+    "version": "V1.0",
+    "platform": "iOS",
+    "popular": true,
+    "isNew": true,
+    "description": "نسخة تويتر X مع بعض المزايا الإضافية.",
+    "icon": "https://i.imgur.com/odfVb8p.png",
+    "downloadUrl": "رابط_الـIPA"
   },
   {
     "id": "snapchat_plus",
-    "name": "سناب شات بلس",
+    "name": "سناب شات",
     "subtitle": "سناب شات بلس يتطلب وجود كود لتسجيل الدخول",
-    "downloads": 37,
+    "downloads": 54,
     "version": "V1.0",
     "platform": "iOS",
     "popular": false,
     "isNew": true,
-    "description": "نسخة مطوّرة من سناب شات مع مزايا إضافية.",
-    "icon": "https://i.imgur.com/eO7P0Sg.png",
+    "description": "نسخة مطورة من سناب شات مع مزايا إضافية.",
+    "icon": "https://i.imgur.com/FzY1KkM.png",
+    "downloadUrl": "رابط_الـIPA"
+  },
+  {
+    "id": "unblur_photo",
+    "name": "UnBlur Photo",
+    "subtitle": "Premium features activated ✅ - To modify",
+    "downloads": 20,
+    "version": "V1.0",
+    "platform": "iOS",
+    "popular": false,
+    "isNew": true,
+    "description": "تطبيق لتحسين الصور وتشغيل خصائص بريميوم.",
+    "icon": "https://i.imgur.com/2jr7P8B.png",
     "downloadUrl": "رابط_الـIPA"
   }
 ]
