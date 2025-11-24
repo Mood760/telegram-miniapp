@@ -1,8 +1,28 @@
 [
   {
-    "name": "تطبيق مثال",
-    "description": "نسخة بدون إعلانات",
-    "download": "https://link-to-your-ipa",
-    "popular": true
+    "id": "youtube_premium",
+    "name": "يوتيوب بريميوم",
+    "subtitle": "آخر إصدار من يوتيوب بريميوم مطوّر بدون إعلانات",
+    "downloads": 106,
+    "version": "V10.89.99",
+    "platform": "iOS",
+    "popular": true,
+    "isNew": true,
+    "description": "آخر إصدار من يوتيوب بريميوم مطوّر بدون إعلانات.",
+    "icon": "https://i.imgur.com/9T8x3Vv.png",
+    "downloadUrl": "ضع_هنا_رابط_الـIPA_من_القناة"
+  },
+  {
+    "id": "snapchat_plus",
+    "name": "سناب شات بلس",
+    "subtitle": "سناب شات بلس يتطلب وجود كود لتسجيل الدخول",
+    "downloads": 37,
+    "version": "V1.0",
+    "platform": "iOS",
+    "popular": false,
+    "isNew": true,
+    "description": "نسخة مطوّرة من سناب شات مع مزايا إضافية.",
+    "icon": "https://i.imgur.com/eO7P0Sg.png",
+    "downloadUrl": "رابط_الـIPA"
   }
 ]

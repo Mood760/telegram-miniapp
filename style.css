@@ -1,35 +1,277 @@
-body {
-  background:#000;
-  color:#fff;
-  font-family: sans-serif;
-  padding: 16px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-  text-align:center;
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+
+.page {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+/* ====== الهيدر ====== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
+
+.header-title h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header-sub {
+  font-size: 11px;
+  color: #a0a0a0;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.store-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.store-accent {
+  color: #a48bff;
+  font-weight: 700;
+}
+
+.stack-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid #ffffff80;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.stack-icon span {
+  width: 12px;
+  height: 2px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+/* ====== مربع البحث ====== */
+.search-wrapper {
+  position: relative;
   margin-bottom: 20px;
 }
 
-.list {
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.search-wrapper input {
+  width: 100%;
+  background: #181820;
+  border-radius: 14px;
+  border: none;
+  padding: 12px 40px 12px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
 }
 
-.card {
-  background:#111;
-  padding:16px;
-  border-radius:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.search-wrapper input::placeholder {
+  color: #6e6f7b;
 }
 
-button {
-  background:#6c4cff;
-  padding:10px 18px;
-  border-radius:8px;
-  border:none;
-  color:white;
-  cursor:pointer;
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
 }
+
+/* ====== العناوين ====== */
+.section {
+  margin-bottom: 22px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.section-title h2 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ====== قائمة الأكثر تحميلاً (横) ====== */
+.popular-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.popular-card {
+  min-width: 160px;
+  background: radial-gradient(circle at top left, #6f4dff, #1a1824);
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.popular-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.popular-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.popular-downloads {
+  font-size: 11px;
+  color: #d5d5ff;
+}
+
+.popular-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.popular-icon img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+/* ====== قائمة كل التطبيقات (عمودية) ====== */
+.apps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-card {
+  background: #101018;
+  border-radius: 18px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.app-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-arrow {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #181820;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #bbbbc8;
+}
+
+.app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.badge-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1c3f1c;
+  color: #7fd87f;
+  font-size: 11px;
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-bottom: 2px;
+}
+
+.app-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app-sub {
+  font-size: 11px;
+  color: #8c8d97;
+}
+
+.app-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.app-icon img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* ====== شيت التفاصيل ====== */
+.details-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: transform 0.28s ease-out;
+  pointer-events: none;
+}
+
+.details-sheet.open {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.details-content {
+  background: #050509;
+  border-radius: 26px 26px 0 0;
+  padding: 18px 18px 24px;
+  box-shadow: 0 -12px 30px rgba(0,0,0,0.85);
+}
+
+.details-top {
+  display: flex;
+  justify-content: space-betwe

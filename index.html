@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بوت التطبيقات</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوت التطبيقات</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
+  <div class="page">
 
-<header>
-  <h2>بوت التطبيقات</h2>
-  <p>mini app</p>
-</header>
+    <!-- الهيدر (العنوان فوق) -->
+    <header class="header">
+      <div class="header-title">
+        <span class="header-sub">mini app</span>
+        <h1>بوت التطبيقات</h1>
+      </div>
+      <div class="header-right">
+        <span class="store-text">Store <span class="store-accent">App</span></span>
+        <div class="stack-icon">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
 
-<input type="text" id="search" placeholder="إبحث عن تطبيق...">
+    <!-- مربع البحث -->
+    <div class="search-wrapper">
+      <input id="searchInput" type="text" placeholder="إبحث عن تطبيق..." />
+      <span class="search-icon">🔍</span>
+    </div>
 
-<h3>🔥 الأكثر تحميلاً</h3>
-<div id="popular" class="list"></div>
+    <!-- الأكثر تحميلاً -->
+    <section class="section">
+      <div class="section-title">
+        <h2>الأكثر تحميلاً</h2>
+        <span>🔥</span>
+      </div>
+      <div id="popularApps" class="popular-list"></div>
+    </section>
 
-<h3>📚 كل التطبيقات</h3>
-<div id="all-apps" class="list"></div>
+    <!-- كل التطبيقات -->
+    <section class="section">
+      <div class="section-title">
+        <h2>كل التطبيقات</h2>
+        <span>📚</span>
+      </div>
+      <div id="allApps" class="apps-list"></div>
+    </section>
 
-<script src="app.js"></script>
+  </div>
+
+  <!-- شيت التفاصيل (اللي تحت مثل الصورة الثانية) -->
+  <div id="detailsSheet" class="details-sheet">
+    <div class="details-content">
+      <div class="details-top">
+        <div>
+          <h3 id="detailsName"></h3>
+          <p class="details-meta">
+            <span id="detailsVersion"></span>
+            <span class="dot">•</span>
+            <span id="detailsPlatform"></span>
+          </p>
+          <p class="details-downloads">
+            <span id="detailsDownloads"></span> تحميل
+            <span class="downloads-icon">📩</span>
+          </p>
+        </div>
+        <div class="details-icon-wrapper">
+          <img id="detailsIcon" alt="">
+        </div>
+      </div>
+
+      <div class="details-desc-box">
+        <p id="detailsDescription"></p>
+      </div>
+
+      <a id="detailsLink" href="#" target="_blank" class="details-btn">
+        تحميل الآن ⬇️
+      </a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
