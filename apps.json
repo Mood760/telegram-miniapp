@@ -4,20 +4,20 @@
     "version": "V 1.0",
     "tag": "تطبيق المتجر",
     "icon": "https://imoayad.site/upload/iMoayadlogos.png",
-    "downloadUrl": "#"
+    "downloadUrl": "https://www.youtube.com/"
   },
   {
     "name": "Whatsapp",
     "version": "V 2.21.200",
     "tag": "Watusi",
     "icon": "https://imoayad.site/groups/pro1/app2/Whatsappcon.jpeg",
-    "downloadUrl": "#"
+    "downloadUrl": "https://www.youtube.com/"
   },
   {
     "name": "YouTube",
     "version": "V 17.08.2",
     "tag": "Cercube",
     "icon": "https://imoayad.site/upload/Youtubecon.jpg",
-    "downloadUrl": "#"
+    "downloadUrl": "https://www.youtube.com/"
   }
 ]
