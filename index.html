@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>تثبيت التطبيق التجريبي</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .container {
-            background-color: white;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-        }
-        h1 {
-            color: #007aff; /* لون أزرق خاص بـ iOS */
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-        p {
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-        .install-button {
-            display: inline-block;
-            background-color: #4cd964; /* لون أخضر للتثبيت */
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: background-color 0.3s;
-        }
-        .install-button:hover {
-            background-color: #3cb44a;
-        }
-        .note {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>تثبيت التطبيق التجريبي</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            color: #007aff; /* لون أزرق خاص بـ iOS */
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .install-button {
+            display: inline-block;
+            background-color: #4cd964; /* لون أخضر للتثبيت */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .install-button:hover {
+            background-color: #3cb44a;
+        }
+        .note {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>تطبيق [اسم تطبيقك] التجريبي</h1>
-        <p>اضغط على الزر أدناه لتثبيت التطبيق مباشرة على جهازك (يجب أن يكون UDID الخاص بك مضافاً).</p>
+    <div class="container">
+        <h1>تطبيق [اسم تطبيقك] التجريبي</h1>
+        <p>اضغط على الزر أدناه لتثبيت التطبيق مباشرة على جهازك (يجب أن يكون UDID الخاص بك مضافاً).</p>
 
-        <a href="itms-services://?action=download-manifest&url=https://mood760.github.io/telegram-miniapp/apps/WatManifest.plis" class="install-button">
-            تثبيت التطبيق
-        </a>
+                <a href="itms-services://?action=download-manifest&url=https://mood760.github.io/telegram-miniapp/apps/WatManifest.plist" class="install-button">
+            تثبيت التطبيق
+        </a>
 
-        <div class="note">
-            يجب فتح هذا الرابط باستخدام متصفح **Safari** على جهاز iPhone أو iPad.
-        </div>
-    </div>
+        <div class="note">
+            يجب فتح هذا الرابط باستخدام متصفح **Safari** على جهاز iPhone أو iPad.
+        </div>
+    </div>
 </body>
 </html>
-
