@@ -17,13 +17,13 @@
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.fouadraheb.watusi1</string>
+                <string>net.whatsapp.WhatsApp011</string>
                 <key>bundle-version</key>
                 <string>100.0</string>
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
-                <string>طيزك</string>
+                <string>طيزي</string>
             </dict>
         </dict>
     </array>
