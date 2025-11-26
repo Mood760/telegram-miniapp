@@ -1,128 +1,67 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iMoayad Store</title>
-
-  <!-- خط تاجوال -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-
-  <!-- سكربت الكتابة المتحركة (نفس اللي في الكود الأصلي لكن نظيف) -->
-  <script>
-    var TxtType = function (el, toRotate, period) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = parseInt(period, 10) || 2000;
-      this.txt = '';
-      this.tick();
-      this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function () {
-      var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
-
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-      }
-
-      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-      var that = this;
-      var delta = 200 - Math.random() * 100;
-
-      if (this.isDeleting) {
-        delta /= 2;
-      }
-
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
-
-      setTimeout(function () {
-        that.tick();
-      }, delta);
-    };
-
-    window.onload = function () {
-      // تفعيل الكتابة المتحركة
-      var elements = document.getElementsByClassName('typewrite');
-      for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>تثبيت التطبيق التجريبي</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+            color: #333;
         }
-      }
-      var css = document.createElement("style");
-      css.type = "text/css";
-      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-      document.body.appendChild(css);
-
-      // بعد ما تجهز الصفحة، حمّل التطبيقات
-      loadApps();
-    };
-  </script>
-
-  <script src="app.js" defer></script>
+        .container {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            color: #007aff; /* لون أزرق خاص بـ iOS */
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .install-button {
+            display: inline-block;
+            background-color: #4cd964; /* لون أخضر للتثبيت */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .install-button:hover {
+            background-color: #3cb44a;
+        }
+        .note {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-  <!-- نافبار بسيطة -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="brand">
-        <span class="brand-main">iMoayad</span>
-        <span class="brand-sub">Store</span>
-      </div>
+    <div class="container">
+        <h1>تطبيق [اسم تطبيقك] التجريبي</h1>
+        <p>اضغط على الزر أدناه لتثبيت التطبيق مباشرة على جهازك (يجب أن يكون UDID الخاص بك مضافاً).</p>
+
+        <a href="itms-services://?action=download-manifest&url=https://yourdomain.com/beta/Manifest.plist" class="install-button">
+            تثبيت التطبيق
+        </a>
+
+        <div class="note">
+            يجب فتح هذا الرابط باستخدام متصفح **Safari** على جهاز iPhone أو iPad.
+        </div>
     </div>
-  </nav>
-
-  <div class="page-body">
-    <!-- اللوجو -->
-    <div class="logo-wrapper">
-      <img src="https://imoayad.site/upload/iMoayadlogos.png" alt="logo" class="logo-img">
-    </div>
-
-    <!-- النص المتحرك -->
-    <h5 class="type-line">
-      <a href="#" class="typewrite" data-period="1500" data-type='["", "iMoayad Store .."]'>
-        <span class="wrap"></span>
-      </a>
-    </h5>
-
-    <!-- وصف بسيط -->
-    <h6 class="subtitle">
-      جميع التطبيقات تم تعديلها بواسطة المطوّر
-    </h6>
-
-    <!-- عدد التطبيقات -->
-    <p class="apps-count">
-      عدد التطبيقات : <span id="appsCount">0</span>
-    </p>
-
-    <!-- شبكة الكروت -->
-    <div class="cards-container" id="appsContainer">
-      <!-- يتم تعبئتها من app.js -->
-    </div>
-
-    <div style="height: 120px;"></div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <p>© iMoayad Store</p>
-    </div>
-  </footer>
 </body>
 </html>
